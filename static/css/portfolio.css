@@ -673,16 +673,6 @@ section {
     font-size: 1.1rem;
 }
 
-/* .skills-category h4 {
-    align-content: center;
-    border-left: 4px solid var(--primary-color);
-    padding-left: 12px;
-}
-
-.skills-category .skills {
-    margin-bottom: 1.5rem;
-} */
-
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -942,34 +932,6 @@ footer {
     padding: 1rem 0;
     border-top: 1px solid var(--border-color);
 }
-
-/* .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: var(--glass-bg);
-    color: var(--text-secondary);
-    border-radius: 50%;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(10px);
-}
-
-.social-links a:hover {
-    background: var(--gradient-primary);
-    color: var(--text-primary);
-    transform: translateY(-3px);
-} */
 
 .social-links {
     display: flex;
