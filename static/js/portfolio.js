@@ -16,25 +16,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-    
+
     let current = '';
     const scrollY = window.pageYOffset;
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        
+
         // Adjust for navbar height (add some offset)
         if (scrollY >= (sectionTop - 100)) {
             current = section.getAttribute('id');
         }
     });
-    
+
     // Remove active class from all nav links
     navLinks.forEach(link => {
         link.classList.remove('active');
     });
-    
+
     // Add active class to current section's nav link
     if (current) {
         const activeLink = document.querySelector(`.nav-links a[href="#${current}"]`);
@@ -52,13 +52,13 @@ window.addEventListener('scroll', function () {
     } else {
         navbar.classList.remove('scrolled');
     }
-    
+
     // Update active navigation highlighting
     updateActiveNavLink();
 });
 
 // Initialize active nav on page load
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     updateActiveNavLink();
 });
 
@@ -81,48 +81,78 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-// Form submission
-document.querySelector('.contact-form').addEventListener('submit', function (e) {
+// // Form submission
+// document.querySelector('.contact-form').addEventListener('submit', function (e) {
+//     e.preventDefault();
+
+//     // Get form data
+//     const formData = new FormData(this);
+//     const name = formData.get('name');
+//     const email = formData.get('email');
+//     const message = formData.get('message');
+
+//     // Simple validation
+//     if (!name || !email || !message) {
+//         alert('Please fill in all fields');
+//         return;
+//     }
+
+//     // Simulate form submission
+//     const submitBtn = this.querySelector('.submit-btn');
+//     const originalText = submitBtn.textContent;
+//     submitBtn.textContent = 'Sending...';
+//     submitBtn.disabled = true;
+
+//     setTimeout(() => {
+//         alert('Message sent successfully!');
+//         this.reset();
+//         submitBtn.textContent = originalText;
+//         submitBtn.disabled = false;
+//     }, 2000);
+// });
+
+// EmailJS integration for contact form submission
+document.querySelector('.contact-form').addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    // Get form data
-    const formData = new FormData(this);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
-
-    // Simple validation
-    if (!name || !email || !message) {
-        alert('Please fill in all fields');
-        return;
-    }
-
-    // Simulate form submission
     const submitBtn = this.querySelector('.submit-btn');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
 
-    setTimeout(() => {
+    // Add time as a hidden field
+    const now = new Date();
+    const timeInput = document.createElement('input');
+    timeInput.type = 'hidden';
+    timeInput.name = 'time';
+    timeInput.value = now.toLocaleString();
+    this.appendChild(timeInput);
+
+    try {
+        await emailjs.sendForm('service_xfw58e9', 'template_yoe2hln', this);
         alert('Message sent successfully!');
         this.reset();
+    } catch (error) {
+        console.error('EmailJS error:', error);
+        alert('Failed to send message. Please try again later.');
+    } finally {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
-    }, 2000);
+    }
 });
 
 // Enhanced mobile menu toggle
 document.querySelector('.mobile-menu').addEventListener('click', function () {
     const navLinks = document.querySelector('.nav-links');
     const mobileMenu = document.querySelector('.mobile-menu');
-    
+
     navLinks.classList.toggle('mobile-active');
     mobileMenu.classList.toggle('active');
 });
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function () {
         const navLinks = document.querySelector('.nav-links');
         const mobileMenu = document.querySelector('.mobile-menu');
         navLinks.classList.remove('mobile-active');
