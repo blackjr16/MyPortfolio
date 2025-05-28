@@ -81,36 +81,7 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-// // Form submission
-// document.querySelector('.contact-form').addEventListener('submit', function (e) {
-//     e.preventDefault();
-
-//     // Get form data
-//     const formData = new FormData(this);
-//     const name = formData.get('name');
-//     const email = formData.get('email');
-//     const message = formData.get('message');
-
-//     // Simple validation
-//     if (!name || !email || !message) {
-//         alert('Please fill in all fields');
-//         return;
-//     }
-
-//     // Simulate form submission
-//     const submitBtn = this.querySelector('.submit-btn');
-//     const originalText = submitBtn.textContent;
-//     submitBtn.textContent = 'Sending...';
-//     submitBtn.disabled = true;
-
-//     setTimeout(() => {
-//         alert('Message sent successfully!');
-//         this.reset();
-//         submitBtn.textContent = originalText;
-//         submitBtn.disabled = false;
-//     }, 2000);
-// });
-
+// EmailJS configuration
 // EmailJS integration for contact form submission
 document.querySelector('.contact-form').addEventListener('submit', async function (e) {
     e.preventDefault();
