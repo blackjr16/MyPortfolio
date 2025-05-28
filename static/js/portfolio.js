@@ -242,3 +242,52 @@ sections.forEach(section => {
 
 // Smooth scrolling behavior for better UX
 document.documentElement.style.scrollBehavior = 'smooth';
+
+
+// light and dark mode toggle
+// Theme toggle functionality
+function initThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const root = document.documentElement;
+
+    // Check for saved theme preference or default to 'dark'
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+
+    // Apply the saved theme
+    if (currentTheme === 'light') {
+        root.classList.add('light-mode');
+        themeIcon.className = 'fas fa-sun';
+    } else {
+        root.classList.remove('light-mode');
+        themeIcon.className = 'fas fa-moon';
+    }
+
+    // Theme toggle event listener
+    themeToggle.addEventListener('click', function () {
+        const isLightMode = root.classList.contains('light-mode');
+
+        if (isLightMode) {
+            // Switch to dark mode
+            root.classList.remove('light-mode');
+            themeIcon.className = 'fas fa-moon';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            // Switch to light mode
+            root.classList.add('light-mode');
+            themeIcon.className = 'fas fa-sun';
+            localStorage.setItem('theme', 'light');
+        }
+
+        // Add a smooth transition effect
+        themeToggle.style.transform = 'rotate(180deg)';
+        setTimeout(() => {
+            themeToggle.style.transform = 'rotate(0deg)';
+        }, 300);
+    });
+}
+
+// Initialize theme toggle when page loads
+window.addEventListener('load', function () {
+    initThemeToggle();
+});

@@ -801,3 +801,78 @@ footer {
         padding: 2rem;
     }
 }
+
+/* Light Mode Styles */
+/* Light mode variables */
+:root.light-mode {
+    --primary-color: #0066cc;
+    --secondary-color: #6b46c1;
+    --accent-color: #dc2626;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a5568;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7fafc;
+    --bg-card: #ffffff;
+    --border-color: #e2e8f0;
+    --gradient-primary: linear-gradient(135deg, #0066cc 0%, #6b46c1 100%);
+    --gradient-accent: linear-gradient(135deg, #dc2626 0%, #f59e0b 100%);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.1);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+    background: var(--gradient-primary);
+    transform: scale(1.1);
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover i {
+    color: white;
+}
+
+/* Light mode animated background adjustments */
+:root.light-mode .animated-bg {
+    background: linear-gradient(-45deg, #ffffff, #f0f9ff, #e0f2fe, #ffffff);
+}
+
+:root.light-mode .animated-bg::before {
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(0, 102, 204, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(107, 70, 193, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(220, 38, 38, 0.05) 0%, transparent 50%);
+}
+
+/* Mobile responsive for theme toggle */
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    
+    .theme-toggle i {
+        font-size: 1rem;
+    }
+}
