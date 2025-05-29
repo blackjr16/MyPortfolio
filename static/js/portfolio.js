@@ -262,3 +262,7 @@ function initThemeToggle() {
 window.addEventListener('load', function () {
     initThemeToggle();
 });
+
+function handleLogin() {
+    window.location.href = 'login.html';
+}

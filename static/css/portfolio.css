@@ -60,15 +60,33 @@ html {
 }
 
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 @keyframes floatingOrbs {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    33% { transform: translate(-30px, -30px) rotate(120deg); }
-    66% { transform: translate(30px, -15px) rotate(240deg); }
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(-30px, -30px) rotate(120deg);
+    }
+
+    66% {
+        transform: translate(30px, -15px) rotate(240deg);
+    }
 }
 
 /* Navigation */
@@ -198,11 +216,11 @@ nav.scrolled {
     .nav-container {
         padding: 0 1rem;
     }
-    
+
     .mobile-menu {
         display: block;
     }
-    
+
     .nav-links {
         position: absolute;
         top: 100%;
@@ -221,36 +239,78 @@ nav.scrolled {
         transform: translateY(-20px);
         transition: all 0.4s ease;
     }
-    
+
     .nav-links.mobile-active {
         max-height: 400px;
         opacity: 1;
         transform: translateY(0);
     }
-    
+
     .nav-links li {
         padding: 0 2rem;
     }
-    
+
     .nav-links a {
         display: block;
         padding: 1rem 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         font-size: 1.1rem;
     }
-    
+
     .nav-links a:last-child {
         border-bottom: none;
     }
-    
+
     .nav-links a.active {
         background: rgba(0, 212, 255, 0.1);
         border-left: 4px solid var(--primary-color);
         padding-left: 1.5rem;
     }
-    
+
     .nav-links a.active::after {
         display: none;
+    }
+}
+
+/* Fixed Login Button */
+.login-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+    transition: all 0.3s ease;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+}
+
+.login-btn:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 12px 35px rgba(0, 212, 255, 0.4);
+}
+
+.login-btn:active {
+    transform: scale(0.95);
+}
+
+/* Login Mobile responsive */
+@media (max-width: 768px) {
+    .login-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
     }
 }
 
@@ -735,6 +795,7 @@ footer {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -897,7 +958,7 @@ footer {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
     }
-    
+
     .theme-toggle i {
         font-size: 1rem;
     }

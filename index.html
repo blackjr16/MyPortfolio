@@ -7,10 +7,12 @@
     <title>Jrlaureano's Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
-    <!-- css -->
+    <!-- Link to the CSS file for styling -->
     <link href="static/css/portfolio.css" rel="stylesheet">
-    <link rel="icon" href="static/images/portfolio.icon" type="image/x-icon">
+    <link href="static/css/modal.css" rel="stylesheet">
 
+    <!-- portfolio icon-->
+    <link rel="icon" href="static/images/portfolio.icon" type="image/x-icon">
 
     <!-- EmailJS SDK v4 via non-module script -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -267,8 +269,126 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Fixed Login Button -->
+    <button class="login-btn" onclick="openLoginModal()" title="Login">
+        <i class="fas fa-user"></i>
+    </button>
+
+    <!-- Modal for Login -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeModal('loginModal')">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <h2 class="modal-title">Welcome Back</h2>
+            <p class="modal-subtitle">Sign in to your account to continue</p>
+
+            <form class="auth-form" id="loginForm">
+                <div class="form-group-auth">
+                    <input type="email" class="form-input" placeholder="Email address" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+
+                <div class="form-group-auth">
+                    <input type="password" class="form-input" placeholder="Password" required>
+                    <i class="fas fa-lock"></i>
+                    <button type="button" class="password-toggle" onclick="togglePassword(this)">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+
+                <div class="remember-forgot">
+                    <label class="remember-me">
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="auth-submit">Sign In</button>
+            </form>
+
+            <div class="auth-divider">
+                <span>or continue with</span>
+            </div>
+
+            <div class="social-auth">
+                <button class="social-btn">
+                    <i class="fab fa-google"></i> Google
+                </button>
+                <button class="social-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </button>
+            </div>
+
+            <p class="auth-switch">
+                Don't have an account? <a href="#" onclick="switchToSignup()">Sign up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal-overlay" id="signupModal">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeModal('signupModal')">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <h2 class="modal-title">Create Account</h2>
+            <p class="modal-subtitle">Join us and start your journey</p>
+
+            <form class="auth-form" id="signupForm">
+                <div class="form-group-auth">
+                    <input type="text" class="form-input" placeholder="Full name" required>
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <div class="form-group-auth">
+                    <input type="email" class="form-input" placeholder="Email address" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+
+                <div class="form-group-auth">
+                    <input type="password" class="form-input" placeholder="Password" required>
+                    <i class="fas fa-lock"></i>
+                    <button type="button" class="password-toggle" onclick="togglePassword(this)">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+
+                <div class="form-group-auth">
+                    <input type="password" class="form-input" placeholder="Confirm password" required>
+                    <i class="fas fa-lock"></i>
+                    <button type="button" class="password-toggle" onclick="togglePassword(this)">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+
+                <button type="submit" class="auth-submit">Create Account</button>
+            </form>
+
+            <div class="auth-divider">
+                <span>or continue with</span>
+            </div>
+
+            <div class="social-auth">
+                <button class="social-btn">
+                    <i class="fab fa-google"></i> Google
+                </button>
+                <button class="social-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </button>
+            </div>
+
+            <p class="auth-switch">
+                Already have an account? <a href="#" onclick="switchToLogin()">Sign in</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- JavaScript for interactivity -->
     <script src="static/js/portfolio.js"></script>
+    <script src="static/js/modal.js"></script>
 </body>
 
 </html>
