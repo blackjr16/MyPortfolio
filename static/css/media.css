@@ -1,0 +1,345 @@
+/* Fix mobile header and navigation spacing */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1rem;
+        position: relative;
+    }
+
+    .logo {
+        font-size: 1.5rem; /* Reduce logo size for mobile */
+    }
+}
+
+/* Fix home section mobile spacing and text sizing */
+@media (max-width: 768px) {
+    .home {
+        padding: 0 1rem;
+        min-height: 100vh; /* Use min-height instead of height */
+    }
+
+    .home-content {
+        padding: 0 1rem;
+        margin-top: 80px; /* Account for fixed nav */
+    }
+
+    .home h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+
+    .home .subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .home p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .cta-button {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+        padding: 12px 24px;
+    }
+}
+
+/* Fix about section mobile layout */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-text h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .skills {
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .skill-tag {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Fix services section mobile spacing */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .service-card {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Fix portfolio section mobile layout */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .portfolio-item {
+        margin: 0 1rem;
+    }
+
+    .portfolio-image {
+        height: 200px;
+        font-size: 3rem;
+    }
+
+    .portfolio-content {
+        padding: 1.5rem;
+    }
+
+    .portfolio-content h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Fix contact section mobile layout */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact-form {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .contact-info {
+        margin: 0 1rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact-item {
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-item i {
+        font-size: 1.2rem;
+        margin-right: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 16px;
+        font-size: 1rem;
+    }
+
+    .submit-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
+
+/* Fix social links mobile layout */
+@media (max-width: 768px) {
+    .social-links {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-link-item {
+        flex: 0 0 auto;
+        min-width: 60px;
+    }
+
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .social-link-label {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+}
+
+/* Fix section spacing for mobile */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* Fix theme toggle mobile positioning */
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        margin-left: 0.5rem;
+        order: 1; /* Place before mobile menu */
+    }
+}
+
+/* Additional mobile fixes for very small screens */
+@media (max-width: 480px) {
+    .home h1 {
+        font-size: 2rem;
+    }
+
+    .home .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .home p {
+        font-size: 0.95rem;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .service-card {
+        padding: 1.5rem 1rem;
+        margin: 0 0.5rem;
+    }
+
+    .portfolio-item {
+        margin: 0 0.5rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem 1rem;
+        margin: 0 0.5rem;
+    }
+
+    .contact-info {
+        margin: 0 0.5rem;
+    }
+}
+
+/* Fix horizontal scrolling issues */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Fix mobile menu button alignment */
+@media (max-width: 768px) {
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo-container {
+        flex: 1;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .mobile-menu {
+        order: 3;
+        margin-left: 0.5rem;
+    }
+
+    .theme-toggle {
+        order: 2;
+    }
+}
+
+/* Fix login button mobile positioning */
+@media (max-width: 768px) {
+    .login-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Ensure proper text wrapping and spacing */
+@media (max-width: 768px) {
+    .about-text p,
+    .service-card p,
+    .portfolio-content p {
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+}
+
+/* Fix form input mobile styling */
+@media (max-width: 768px) {
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+        /* -webkit-appearance: none; */
+        border-radius: 8px;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+}
