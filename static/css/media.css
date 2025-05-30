@@ -108,27 +108,27 @@
     }
 }
 
-/* Fix portfolio section mobile layout */
+/* Fix project section mobile layout */
 @media (max-width: 768px) {
-    .portfolio-grid {
+    .project-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
-    .portfolio-item {
+    .project-item {
         margin: 0 1rem;
     }
 
-    .portfolio-image {
+    .project-image {
         height: 200px;
         font-size: 3rem;
     }
 
-    .portfolio-content {
+    .project-content {
         padding: 1.5rem;
     }
 
-    .portfolio-content h3 {
+    .project-content h3 {
         font-size: 1.3rem;
     }
 }
@@ -251,7 +251,7 @@
         margin: 0 0.5rem;
     }
 
-    .portfolio-item {
+    .project-item {
         margin: 0 0.5rem;
     }
 
@@ -322,7 +322,7 @@ html, body {
 @media (max-width: 768px) {
     .about-text p,
     .service-card p,
-    .portfolio-content p {
+    .project-content p {
         word-wrap: break-word;
         hyphens: auto;
     }

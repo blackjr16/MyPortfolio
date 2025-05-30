@@ -195,7 +195,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const section = entry.target;
-            const cards = section.querySelectorAll('.service-card, .portfolio-item');
+            const cards = section.querySelectorAll('.service-card, .project-item');
             if (cards.length > 0) {
                 cards.forEach((card, index) => {
                     setTimeout(() => {
